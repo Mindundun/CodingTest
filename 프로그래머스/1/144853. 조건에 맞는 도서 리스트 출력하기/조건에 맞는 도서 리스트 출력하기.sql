@@ -1,0 +1,5 @@
+SELECT BOOK_ID, CONVERT(PUBLISHED_DATE, CHAR) AS PUBLISHED_DATE
+  FROM BOOK
+ WHERE LEFT(published_date,4) = '2021'
+   AND category = '인문'
+ ORDER BY published_date
