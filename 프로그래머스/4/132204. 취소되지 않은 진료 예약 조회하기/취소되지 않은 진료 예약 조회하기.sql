@@ -1,0 +1,16 @@
+-- 코드를 입력하세요
+SELECT A.APNT_NO,
+       C.PT_NAME,
+       A.PT_NO,
+       A.MCDP_CD,
+       B.DR_NAME,
+       A.APNT_YMD
+  FROM APPOINTMENT AS A 
+    LEFT OUTER JOIN DOCTOR  AS B ON B.DR_ID = A.MDDR_ID
+    LEFT OUTER JOIN PATIENT AS C ON C.PT_NO = A.PT_NO
+ WHERE A.MDDR_ID IN (SELECT DR_ID
+                       FROM DOCTOR 
+                      WHERE MCDP_CD = 'CS')
+   AND DATE(A.APNT_YMD) ='20220413'
+   AND A.APNT_CNCL_YN = "N"
+ORDER BY APNT_YMD 
