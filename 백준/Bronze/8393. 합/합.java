@@ -1,13 +1,17 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception{
 
         int hap = 0;
 
-        Scanner scan = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
 
-        int num = scan.nextInt();
+        int num = Integer.parseInt(br.readLine());
+
 
         for(int i = 1; i <= num; i++){
             hap += i;
